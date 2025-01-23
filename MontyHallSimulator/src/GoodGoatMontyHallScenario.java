@@ -15,11 +15,11 @@ public class GoodGoatMontyHallScenario implements IMontyHallScenario
     @Override
     public void assignPrizesToDoors()
     {
-        PrizeTypes goodGoat = PrizeTypes.GOOD_GOAT;
-        PrizeTypes badGoat = PrizeTypes.BAD_GOAD;
-        PrizeTypes car = PrizeTypes.CAR;
+        PrizeType goodGoat = PrizeType.GOOD_GOAT;
+        PrizeType badGoat = PrizeType.BAD_GOAD;
+        PrizeType car = PrizeType.CAR;
 
-        List<PrizeTypes> prizes = new ArrayList<>();
+        List<PrizeType> prizes = new ArrayList<>();
         prizes.add(goodGoat);
         prizes.add(badGoat);
         prizes.add(car);
@@ -60,24 +60,24 @@ public class GoodGoatMontyHallScenario implements IMontyHallScenario
     }
 
     @Override
-    public boolean isPrizeDesired(PrizeTypes prize)
+    public boolean isPrizeDesired(PrizeType prize)
     {
-        return prize == PrizeTypes.GOOD_GOAT;
+        return prize == PrizeType.GOOD_GOAT;
     }
 
     @Override
-    public PrizeTypes givePlayerPrize(boolean switchDoors)
+    public PrizeType givePlayerPrize(boolean switchDoors)
     {
-        PrizeTypes playerPrize;
+        PrizeType playerPrize;
         int prizeDoor = switchDoors ? this.remainingDoor : this.playerDoorSelection;
 
         if (prizeDoor == goodGoatDoor)
         {
-            playerPrize = PrizeTypes.GOOD_GOAT;
+            playerPrize = PrizeType.GOOD_GOAT;
         }
         else
         {
-            playerPrize = PrizeTypes.CAR;
+            playerPrize = PrizeType.CAR;
         }
 
         return playerPrize;

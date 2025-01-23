@@ -37,7 +37,7 @@ public class MontyHallSimulator
         }
 
         this.montyHallScenario.acceptSelectionAndRevealDoor(doorSelection);
-        PrizeTypes prize = this.montyHallScenario.givePlayerPrize(this.switchDoors);
+        PrizeType prize = this.montyHallScenario.givePlayerPrize(this.switchDoors);
 
         return this.montyHallScenario.isPrizeDesired(prize);
     }

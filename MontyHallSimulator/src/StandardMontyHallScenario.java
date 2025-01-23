@@ -13,11 +13,11 @@ public class StandardMontyHallScenario implements IMontyHallScenario
     @Override
     public void assignPrizesToDoors()
     {
-        PrizeTypes goat1 = PrizeTypes.STANDARD_GOAT1;
-        PrizeTypes goat2 = PrizeTypes.STANDARD_GOAT2;
-        PrizeTypes car = PrizeTypes.CAR;
+        PrizeType goat1 = PrizeType.STANDARD_GOAT1;
+        PrizeType goat2 = PrizeType.STANDARD_GOAT2;
+        PrizeType car = PrizeType.CAR;
 
-        List<PrizeTypes> prizes = new ArrayList<>();
+        List<PrizeType> prizes = new ArrayList<>();
         prizes.add(goat1);
         prizes.add(goat2);
         prizes.add(car);
@@ -64,27 +64,27 @@ public class StandardMontyHallScenario implements IMontyHallScenario
     }
 
     @Override
-    public boolean isPrizeDesired(PrizeTypes prize) {
-        return prize == PrizeTypes.CAR;
+    public boolean isPrizeDesired(PrizeType prize) {
+        return prize == PrizeType.CAR;
     }
 
     @Override
-    public PrizeTypes givePlayerPrize(boolean switchDoors)
+    public PrizeType givePlayerPrize(boolean switchDoors)
     {
-        PrizeTypes playerPrize;
+        PrizeType playerPrize;
         int prizeDoor = switchDoors ? this.remainingDoor : this.playerDoorSelection;
 
         if (prizeDoor == goat1Door)
         {
-            playerPrize = PrizeTypes.STANDARD_GOAT1;
+            playerPrize = PrizeType.STANDARD_GOAT1;
         }
         else if (prizeDoor == goat2Door)
         {
-            playerPrize = PrizeTypes.STANDARD_GOAT2;
+            playerPrize = PrizeType.STANDARD_GOAT2;
         }
         else
         {
-            playerPrize = PrizeTypes.CAR;
+            playerPrize = PrizeType.CAR;
         }
 
         return playerPrize;

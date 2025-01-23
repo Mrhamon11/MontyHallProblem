@@ -1,4 +1,4 @@
-public enum PrizeTypes {
+public enum PrizeType {
     STANDARD_GOAT1("STANDARD_GOAT1"),
     STANDARD_GOAT2("STANDARD_GOAT2"),
     CAR("CAR"),
@@ -7,7 +7,7 @@ public enum PrizeTypes {
 
     private String name;
 
-    private PrizeTypes(String name)
+    private PrizeType(String name)
     {
         this.name = name;
     }
